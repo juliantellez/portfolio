@@ -1,0 +1,11 @@
+{
+  "presets": ["node6", "react", "stage-0"],
+  "plugins": ["add-module-exports",
+    ["module-resolver", {
+    "root": ["./"],
+    "alias": {
+      "src": "./app/scripts/"
+      }
+    }]
+  ]
+}
