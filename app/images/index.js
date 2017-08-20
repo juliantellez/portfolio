@@ -1,0 +1,8 @@
+import './android-chrome-192x192.png'
+import './android-chrome-384x384.png'
+import './apple-touch-icon.png'
+import './favicon-16x16.png'
+import './favicon-32x32.png'
+import './safari-pinned-tab.svg'
+import './mstile-150x150.png'
+import './favicon.ico'

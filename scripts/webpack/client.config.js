@@ -6,12 +6,13 @@ const extractCss = new ExtractTextPlugin('[name].css')
 
 const webpackConfig = {
   entry: {
-    'static/client': config.CLIENT,
-    'static/styles': config.STYLES,
+    images: config.IMAGES,
+    client: config.CLIENT,
+    styles: config.STYLES,
   },
   output: {
     filename: '[name].js',
-    path: config.DEST,
+    path: config.STATIC,
     sourceMapFilename: '[file].map',
   },
   devtool: '#source-map',
@@ -46,6 +47,18 @@ const webpackConfig = {
           ],
           fallback: 'style-loader',
         }),
+      },
+      {
+        test: /\.(png|svg|jpg|gif|ico)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'images/',
+            },
+          },
+        ],
       },
     ],
   },

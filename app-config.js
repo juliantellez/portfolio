@@ -5,6 +5,7 @@ const APP_PORT = 8080
 const ENV = process.env.NODE_ENV || 'development'
 
 const SRC = path.join(__dirname, 'app')
+const IMAGES = path.join(SRC, 'images')
 const STYLES = path.join(SRC, 'styles/main.scss')
 
 const SERVER = path.join(SRC, 'scripts/server')
@@ -20,6 +21,7 @@ module.exports = {
   SERVER,
   CLIENT,
   STYLES,
+  IMAGES,
   DEST,
   STATIC,
 }
