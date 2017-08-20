@@ -4,7 +4,10 @@
     ["module-resolver", {
     "root": ["./"],
     "alias": {
-      "src": "./app/scripts/"
+      "src": "./app/scripts/",
+      "test": "./test/",
+      "client": "./app/scripts/client",
+      "server": "./app/scripts/server"
       }
     }]
   ]

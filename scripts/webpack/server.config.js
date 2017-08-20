@@ -19,7 +19,7 @@ const webpackConfig = {
   output: {
     filename: '[name].js',
     path: config.DEST,
-    sourceMapFileName: '[file].map',
+    sourceMapFilename: '[file].map',
   },
   module: {
     rules: [
