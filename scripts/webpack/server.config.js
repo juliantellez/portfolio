@@ -21,6 +21,7 @@ const webpackConfig = {
     path: config.DEST,
     sourceMapFilename: '[file].map',
   },
+  devtool: '#source-map',
   module: {
     rules: [
       {

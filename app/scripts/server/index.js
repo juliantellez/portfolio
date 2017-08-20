@@ -1,4 +1,6 @@
 import express from 'express'
+import morgan from 'morgan'
+import errorhandler from 'errorhandler'
 
 import config from 'src/config'
 import router from './middleware/router'
@@ -12,6 +14,8 @@ app.get((req, res, next) => {
   next()
 })
 
+app.use(morgan('combined')) // Logger
+
 app.use('/', router)
 
 // move to middleware
@@ -21,9 +25,9 @@ app.use((req, res, next) => {
   next(err)
 })
 
-app.use((err, req, res, next) => {
-  console.log('error', err)
-  res.status(500).send(err)
-})
+// only for development
+if (!process.env.NODE_ENV === 'production') {
+  app.use(errorhandler())
+}
 
 app.listen(port, () => console.log(`Server running on port: ${port}`))

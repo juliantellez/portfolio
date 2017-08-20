@@ -27,6 +27,7 @@
     "chai": "^4.1.1",
     "chai-react": "^3.0.1",
     "enzyme": "^2.9.1",
+    "errorhandler": "^1.5.0",
     "eslint": "^4.4.1",
     "eslint-config-standard": "^10.2.1",
     "eslint-plugin-import": "^2.7.0",
@@ -46,7 +47,9 @@
     "express": "^4.15.4",
     "immutable": "^3.8.1",
     "lodash": "^4.17.4",
+    "morgan": "^1.8.2",
     "react": "^15.6.1",
-    "react-router": "^4.1.2"
+    "react-router": "^4.1.2",
+    "redux": "^3.7.2"
   }
 }

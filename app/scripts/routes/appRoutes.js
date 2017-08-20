@@ -8,6 +8,7 @@ import Root from 'src/components/Root'
 const appRoutes = _.keys(serverRoutes).map(path => {
   const {name, className, handler} = serverRoutes[path]
   const onEnter = (nextState, replace, next) => {
+    console.log('onEnter') // TODO check clientside
     next()
   }
   const onChange = (prevState, nextState, replace, next) => {

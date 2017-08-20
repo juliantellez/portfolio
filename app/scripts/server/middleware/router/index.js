@@ -26,7 +26,7 @@ const matchReactRouter = ({contentInfo, routes, path, req, res, next}) => {
       <App />
     </StaticRouter>
   )
-  const html = body => <Html store={store} {...contentInfo}>{body}</Html>
+  const html = body => <Html state={store.getState()} {...contentInfo}>{body}</Html>
   const response = ReactDOMServer.renderToStaticMarkup(html(root))
   res.send(response)
 }
