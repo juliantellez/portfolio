@@ -19,8 +19,8 @@ const thunkMiddleware = store =>
 // ## Quick Reference:
 // applyMiddleware = (..mw) => createStore
 // createStore = (reducers, state) => store
-
 const storeAndMiddleware = applyMiddleware(thunkMiddleware)
-const store = storeAndMiddleware(createStore)(reducers)
 
-export default store
+export default {
+  createStore: state => storeAndMiddleware(createStore)(reducers, state),
+}

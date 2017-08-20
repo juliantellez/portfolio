@@ -15,6 +15,7 @@
   "author": "julian tellez",
   "license": "ISC",
   "devDependencies": {
+    "autoprefixer-loader": "^3.2.0",
     "babel-core": "^6.26.0",
     "babel-eslint": "^7.2.3",
     "babel-loader": "^7.1.2",
@@ -26,6 +27,7 @@
     "babel-preset-stage-0": "^6.24.1",
     "chai": "^4.1.1",
     "chai-react": "^3.0.1",
+    "css-loader": "^0.28.5",
     "enzyme": "^2.9.1",
     "errorhandler": "^1.5.0",
     "eslint": "^4.4.1",
@@ -35,12 +37,18 @@
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-react": "^7.2.1",
     "eslint-plugin-standard": "^3.0.1",
+    "extract-text-webpack-plugin": "^3.0.0",
+    "import-glob": "^1.5.0",
     "mocha": "^3.5.0",
+    "node-sass": "^4.5.3",
+    "normalize.css": "^7.0.0",
     "react-addons-test-utils": "^15.6.0",
     "react-dom": "^15.6.1",
     "react-test-renderer": "^15.6.1",
+    "sass-loader": "^6.0.6",
     "sinon": "^3.2.1",
     "sinon-chai": "^2.13.0",
+    "style-loader": "^0.18.2",
     "webpack": "^3.5.5"
   },
   "dependencies": {
@@ -50,6 +58,7 @@
     "morgan": "^1.8.2",
     "react": "^15.6.1",
     "react-router": "^4.1.2",
+    "react-router-dom": "^4.1.2",
     "redux": "^3.7.2"
   }
 }

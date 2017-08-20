@@ -3,12 +3,13 @@ import React from 'react'
 import {Router} from 'express'
 import ReactDOMServer from 'react-dom/server'
 import {StaticRouter} from 'react-router'
-import store from 'src/state/store'
+import {createStore} from 'src/state/store'
 import Html from 'src/components/markup/Html'
 
 import routes from 'src/routes'
 
 const router = Router()
+const store = createStore()
 
 const setRouteState = ({routes, path, req}) => {
   const {handler} = routes.serverRoutes[path]
