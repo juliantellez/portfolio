@@ -1,37 +1,27 @@
-import _ from 'lodash'
 import React from 'react'
-import {Route} from 'react-router'
+import {Route, Switch} from 'react-router'
 
-import serverRoutes from './serverRoutes'
+import routes from '../routes'
 import Root from 'src/components/Root'
 
-const appRoutes = _.keys(serverRoutes).map(path => {
-  const {name, className, handler} = serverRoutes[path]
-  const onEnter = (nextState, replace, next) => {
-    console.log('onEnter') // TODO check clientside
-    next()
-  }
-  const onChange = (prevState, nextState, replace, next) => {
-    next()
-  }
+const appRoutes = Object.keys(routes)
+.map(route => {
+  const props = routes[route]
   return (
     <Route
       exact
-      key={name}
-      name={name}
-      path={path}
-      className={className}
-      onChange={onChange}
-      onEnter={onEnter}
-      component={handler.component}
+      key={props.name}
+      {...props}
     />
   )
 })
 
-const App = (
+const AppRoutes = () => (
   <Root>
-    {appRoutes}
+    <Switch>
+      {appRoutes}
+    </Switch>
   </Root>
 )
 
-export default () => App
+export default AppRoutes

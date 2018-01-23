@@ -1,24 +1,21 @@
 import I from 'immutable'
 
-class ContentInfo extends I.Record({
+class SEOInfo extends I.Record({
   title: '',
   description: '',
-}) {}
-
-class RouteHandler extends I.Record({
-  component: null,
-  onEnter: () => new ContentInfo(),
-  onChange: () => new ContentInfo(),
+  keywords: '',
 }) {}
 
 class Route extends I.Record({
   name: '',
+  path: '/',
   className: '',
-  handler: new RouteHandler(),
+  component: null,
+  onChange: () => new SEOInfo(),
+  onEnter: () => new SEOInfo(),
 }) {}
 
 export default {
   Route,
-  RouteHandler,
-  ContentInfo,
+  SEOInfo,
 }
