@@ -1,14 +1,19 @@
 {
-  "presets": ["node6", "react", "stage-0"],
-  "plugins": ["add-module-exports",
-    ["module-resolver", {
-    "root": ["./"],
-    "alias": {
-      "src": "./app/scripts/",
-      "test": "./test/",
-      "client": "./app/scripts/client",
-      "server": "./app/scripts/server"
-      }
-    }]
+    "presets": [
+        "es2015", 
+        "react"
+    ],
+    "plugins": [
+        "add-module-exports",
+        "transform-runtime",
+        ["module-resolver", {
+        "root": ["./"],
+        "alias": {
+            "src": "./app/scripts/",
+            "test": "./test/",
+            "client": "./app/scripts/client",
+            "server": "./app/scripts/server"
+            }
+        }]
   ]
 }
