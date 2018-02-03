@@ -4,8 +4,10 @@
         "react"
     ],
     "plugins": [
-        "add-module-exports",
         "transform-runtime",
+        "transform-class-properties",
+        "transform-object-rest-spread",
+        "add-module-exports",
         ["module-resolver", {
         "root": ["./"],
         "alias": {

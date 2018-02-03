@@ -23,13 +23,6 @@ const webpackConfig = {
         include: config.SRC,
         use: {
           loader: 'babel-loader',
-          options: {
-            presets: [
-              ['es2015', {modules: false}],
-              'stage-0',
-              'react',
-            ],
-          },
         },
       },
       {
