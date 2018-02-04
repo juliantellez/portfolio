@@ -4,9 +4,11 @@ import {BrowserRouter as Router} from 'react-router-dom'
 
 import Routes from '../routes/appRoutes'
 
+const store = Object.assign({}, window.STATE)
+
 const Root = () => (
   <Router>
-    <Routes />
+    <Routes provideStore={store} />
   </Router>
 )
 

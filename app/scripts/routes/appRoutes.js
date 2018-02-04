@@ -18,8 +18,8 @@ const appRoutes = (
   })
 )
 
-const AppRoutes = () => (
-  <Root>
+const AppRoutes = props => (
+  <Root {...props} >
     <Switch>
       {appRoutes}
     </Switch>
