@@ -9,18 +9,16 @@ export default class Html extends React.Component {
     title: PropTypes.string,
     description: PropTypes.string,
     keywords: PropTypes.string,
-    state: PropTypes.object,
+    routeStore: PropTypes.object.isRequired,
   }
 
-  static defaultProps = {
-    state: {},
-  }
-
-  _getState () {
-    const state = JSON.stringify(this.props.state)
+  injectStore () {
+    const routeStore = JSON.stringify(this.props.routeStore)
+    const __html = `var ROUTE_STORE = ${routeStore}`
     return (
       <script
-        dangerouslySetInnerHTML={{__html: `var STATE = ${state}`}} />
+        dangerouslySetInnerHTML={{ __html }}
+      />
     )
   }
 
@@ -39,7 +37,7 @@ export default class Html extends React.Component {
         </head>
         <body>
           <main id='main' dangerouslySetInnerHTML={{__html: this.props.children}} />
-          {this._getState()}
+          {this.injectStore()}
           <script src='/static/client.js'/>
         </body>
       </html>

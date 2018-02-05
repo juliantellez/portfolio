@@ -4,7 +4,7 @@ import {BrowserRouter as Router} from 'react-router-dom'
 
 import Routes from '../routes/appRoutes'
 
-const store = Object.assign({}, window.STATE)
+const store = Object.assign({}, window.ROUTE_STORE)
 
 const Root = () => (
   <Router>

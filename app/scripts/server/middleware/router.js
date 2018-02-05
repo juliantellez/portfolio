@@ -10,22 +10,22 @@ import Route from '../../utils/Route'
 
 const router = Router()
 
-const renderRoutes = location => {
+const renderRoutes = (location, routeStore) => {
   const context = {}
   return ReactDOMServer.renderToString(
     <StaticRouter
       location={location}
       context={context}
     >
-      <AppRoutes />
+      <AppRoutes provideStore={routeStore} />
     </StaticRouter>
   )
 }
 
-const renderMarkup = (body, state, seoInfo) =>
+const renderMarkup = (body, routeStore, seoInfo) =>
   ReactDOMServer.renderToStaticMarkup(
     <Html
-      state={state}
+      routeStore={routeStore}
       {...seoInfo}
     >
       {body}
@@ -36,10 +36,10 @@ Object.keys(routes)
 .map(route => new Route(routes[route]))
 .forEach(route => {
   router.get(route.path, async (req, res) => {
-    const routeState = await route.onEnter(req)
+    const routeStore = await route.onEnter(req)
     const seoInfo = await route.constructSeoInfo(req)
-    const reactRoutes = renderRoutes(req.url)
-    const markup = renderMarkup(reactRoutes, routeState, seoInfo.toJS())
+    const reactRoutes = renderRoutes(req.url, routeStore)
+    const markup = renderMarkup(reactRoutes, routeStore, seoInfo.toJS())
     res.send(markup)
   })
 })

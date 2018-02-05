@@ -3,6 +3,7 @@ const home = {
   path: '/',
   className: 'home',
   component: require('../pages/Home'),
+  onEnter: require('../pages/home/onEnter'),
 }
 
 const about = {
