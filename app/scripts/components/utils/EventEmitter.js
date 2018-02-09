@@ -12,7 +12,10 @@ export default class EventEmitter {
     delete this.listeners[eventName]
   }
   emit (data) {
-    Object.keys(this.listeners)
-    .forEach(listener => this.listeners[listener](data))
+    Object
+    .keys(this.listeners)
+    .map(listener => this.listeners[listener])
+    .filter(Boolean)
+    .forEach(listener => listener(data))
   }
 }

@@ -23,5 +23,9 @@
     "comma-dangle": [2, "always-multiline"],
     "space-before-function-paren": [2, "always"],
     "indent": ["error", 2, { "MemberExpression": 0, "SwitchCase": 1}]
+  },
+  "globals": {
+      "describe": true,
+      "it": true
   }
 }
