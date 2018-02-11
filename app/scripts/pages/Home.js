@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Link } from 'react-router-dom'
 
+import Header from '../components/Header'
 import inject from '../components/utils/inject'
 
 // TODO add @observe
@@ -11,12 +11,12 @@ class Home extends React.Component {
       home$: PropTypes.object.isRequired,
     }
     render () {
+      const {home$} = this.props
       return (
         <div>
-          <Link to='/'>Home</Link>
-          <Link to='/about'>About</Link>
-          <Link to='/blog'>Blog</Link>
-          <div onClick={this.props.home$.onClick}>clik me</div>
+          <Header />
+          <img src={home$.imageUrl}/>
+          <div onClick={home$.onClick}>clik me</div>
         </div>
       )
     }

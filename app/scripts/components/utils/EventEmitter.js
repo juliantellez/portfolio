@@ -1,21 +1,13 @@
 export default class EventEmitter {
-  constructor (listeners = {}) {
-    this.listeners = listeners
-  }
-  on (eventName, eventCallback) {
-    this.listeners[eventName] = eventCallback
+  listeners = []
+  on (cb) {
+    this.listeners.push(cb)
     return () => {
-      delete this.listeners[eventName]
+      const index = this.listeners.indexOf(cb)
+      index !== -1 && this.listeners.splice(index, 1)
     }
   }
-  off (eventName) {
-    delete this.listeners[eventName]
-  }
   emit (data) {
-    Object
-    .keys(this.listeners)
-    .map(listener => this.listeners[listener])
-    .filter(Boolean)
-    .forEach(listener => listener(data))
+    this.listeners.forEach(cb => cb(data))
   }
 }
