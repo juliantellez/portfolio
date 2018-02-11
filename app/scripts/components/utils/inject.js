@@ -31,12 +31,12 @@ export default function inject () {
           static WrappedComponent = WrappedComponent
           static displayName = nameWrappedComponentWithStore(WrappedComponent, storeNames)
           static contextTypes = {
-            store: PropTypes.object.isRequired,
+            stores: PropTypes.object.isRequired,
           }
 
           mapStoresToProps () {
-            const { store } = this.context
-            return selectStores(store, storeNames)
+            const { stores } = this.context
+            return selectStores(stores, storeNames)
           }
 
           render () {

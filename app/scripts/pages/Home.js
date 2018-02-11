@@ -4,19 +4,19 @@ import { Link } from 'react-router-dom'
 
 import inject from '../components/utils/inject'
 
-// TODO @observe
+// TODO add @observe
 @inject('home$')
 class Home extends React.Component {
-    static contextTypes = {
-      store: PropTypes.object,
+    static propTypes = {
+      home$: PropTypes.object.isRequired,
     }
-
     render () {
       return (
         <div>
           <Link to='/'>Home</Link>
           <Link to='/about'>About</Link>
           <Link to='/blog'>Blog</Link>
+          <div onClick={this.props.home$.onClick}>clik me</div>
         </div>
       )
     }

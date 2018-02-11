@@ -4,11 +4,11 @@ import {BrowserRouter as Router} from 'react-router-dom'
 
 import Routes from '../routes/appRoutes'
 
-const store = Object.assign({}, window.ROUTE_STORE)
+const serializedStores = Object.assign({}, window.SERIALIZED_STORES)
 
 const Root = () => (
   <Router>
-    <Routes provideStore={store} />
+    <Routes serializedStores={serializedStores} />
   </Router>
 )
 

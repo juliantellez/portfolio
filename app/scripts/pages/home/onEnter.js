@@ -1,10 +1,10 @@
-import axios from 'axios'
-import { BehaviorSubject } from 'rxjs/BehaviorSubject'
+
+import HomeStore from './HomeStore'
 
 export default async request => {
-  const {data} = await axios.get('http://freegeoip.net/json/')
-  const home$ = new BehaviorSubject({ data })
-
+  const home$ = new HomeStore()
+  const {data} = await home$.fetch()
+  home$.next({data})
   return {
     home$: home$.getValue(),
   }

@@ -9,12 +9,12 @@ export default class Html extends React.Component {
     title: PropTypes.string,
     description: PropTypes.string,
     keywords: PropTypes.string,
-    routeStore: PropTypes.object.isRequired,
+    routeStores: PropTypes.object.isRequired,
   }
 
   injectStore () {
-    const routeStore = JSON.stringify(this.props.routeStore)
-    const __html = `var ROUTE_STORE = ${routeStore}`
+    const serializedStores = JSON.stringify(this.props.routeStores)
+    const __html = `var SERIALIZED_STORES = ${serializedStores}`
     return (
       <script
         dangerouslySetInnerHTML={{ __html }}
