@@ -46,6 +46,10 @@
     "mocha": "^3.5.0",
     "node-sass": "^4.5.3",
     "normalize.css": "^7.0.0",
+    "postcss": "^6.0.19",
+    "postcss-cssnext": "^3.1.0",
+    "postcss-import": "^11.1.0",
+    "postcss-loader": "^2.1.0",
     "react-addons-test-utils": "^15.6.0",
     "react-dom": "^15.6.1",
     "react-test-renderer": "^15.6.1",
@@ -53,7 +57,8 @@
     "sinon": "^3.2.1",
     "sinon-chai": "^2.13.0",
     "style-loader": "^0.18.2",
-    "webpack": "^3.5.5"
+    "webpack": "^3.5.5",
+    "webpack-merge": "^4.1.1"
   },
   "dependencies": {
     "axios": "^0.17.1",

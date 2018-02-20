@@ -1,61 +1,17 @@
-const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const merge = require('webpack-merge')
 
 const config = require('../../app-config')
+const commonConfig = require('./common.config')
 
-const extractCss = new ExtractTextPlugin('[name].css')
-
-const webpackConfig = {
+module.exports = merge(commonConfig, {
+  devtool: 'cheap-module-source-map',
   entry: {
     images: config.IMAGES,
     client: config.CLIENT,
-    styles: config.STYLES,
   },
   output: {
     filename: '[name].js',
     path: config.STATIC,
     sourceMapFilename: '[file].map',
   },
-  devtool: '#source-map',
-  module: {
-    rules: [
-      {
-        test: /\.js$/,
-        include: config.SRC,
-        use: {
-          loader: 'babel-loader',
-        },
-      },
-      {
-        enforce: 'pre',
-        test: /\.scss$/,
-        loader: 'import-glob',
-      },
-      {
-        test: /\.scss$/,
-        use: extractCss.extract({
-          use: [
-            {loader: 'css-loader'},
-            {loader: 'autoprefixer-loader'},
-            {loader: 'sass-loader'},
-          ],
-          fallback: 'style-loader',
-        }),
-      },
-      {
-        test: /\.(png|svg|jpg|gif|ico)$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: '[name].[ext]',
-              outputPath: 'images/',
-            },
-          },
-        ],
-      },
-    ],
-  },
-  plugins: [extractCss],
-}
-
-exports.default = webpackConfig
+})

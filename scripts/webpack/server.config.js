@@ -1,8 +1,14 @@
 const fs = require('fs')
+const merge = require('webpack-merge')
+
+const postcssImport = require('postcss-import')
+const postcssCssNext = require('postcss-cssnext')
 
 const config = require('../../app-config')
+const commonConfig = require('./common.config')
 
-const nodeModules = fs.readdirSync('node_modules')
+const nodeModules = fs
+.readdirSync('node_modules')
 .reduce((modules, module) => {
   if (module === '.bin') {
     return modules
@@ -11,8 +17,7 @@ const nodeModules = fs.readdirSync('node_modules')
   return modules
 }, {})
 
-const webpackConfig = {
-  target: 'node',
+module.exports = merge(commonConfig, {
   entry: {
     server: config.SERVER,
   },
@@ -21,19 +26,7 @@ const webpackConfig = {
     path: config.DEST,
     sourceMapFilename: '[file].map',
   },
-  devtool: '#source-map',
-  module: {
-    rules: [
-      {
-        test: /\.js$/,
-        include: config.SRC,
-        use: {
-          loader: 'babel-loader',
-        },
-      },
-    ],
-  },
+  target: 'node',
+  devtool: 'source-map',
   externals: nodeModules,
-}
-
-exports.default = webpackConfig
+})

@@ -29,7 +29,7 @@ export default class Html extends React.Component {
       <html>
         <head>
           <title>{title}</title>
-          <link rel='stylesheet' type='text/css' href='/static/styles.css' />
+          <link rel='stylesheet' type='text/css' href='/static/client.css' />
           <meta name='viewport' content='width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1' />
           <meta name='description' content={description} />
           <meta name='keywords' content={keywords} />
