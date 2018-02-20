@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import stores from '../stores/main'
+import rootStyles from './Root.css'
 
 export default class Root extends React.Component {
     static childContextTypes = {
@@ -45,7 +46,7 @@ export default class Root extends React.Component {
 
     render () {
       return (
-        <div className='Root'>
+        <div className={rootStyles.main}>
           {this.props.children}
         </div>
       )
