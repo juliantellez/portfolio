@@ -1,15 +1,17 @@
+@import "colors.css";
+@import "viewports.css";
+
 .main {
-    color: #FFFFFF;
+    color: var(--color-white);
     display: flex;
     align-items: center;
-    transition: all .25s ease-out;
 }
 
 .logo {
-    width: 60px;
+    min-width: 60px;
     line-height: 60px;
-    background-color: #c0a062;
-    color: #161616;
+    background-color: var(--color-gold);
+    color: var(--color-black);
     font-size: 18px;
     font-weight: 700;
     text-align: center;
@@ -18,4 +20,8 @@
 .name {
     padding: 15px;
     font-weight: 700;
+    transition: opacity .5s ease-out;
+    @media (--mobile-screen) {
+        opacity: 0;
+    }
 }

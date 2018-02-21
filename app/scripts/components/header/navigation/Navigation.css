@@ -1,20 +1,15 @@
+@import "colors.css";
+
 .main {
 
 }
 
 .link {
-    color: #FFFFFF;
+    color: var(--color-white);
     font-weight: 700;
     padding: 15px;
     transition: all .25s ease-out;
     &:hover {
-        color: #c0a062;
+        color: var(--color-gold);
     }
 }
-
-/* @custom-media --only-medium-screen (width >= 500px) and (width <= 1200px);
-@media (--only-medium-screen) {
-    .link {
-        color: #c0a062;
-    }
-} */

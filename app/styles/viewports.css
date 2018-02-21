@@ -1,0 +1,4 @@
+@custom-media --mobile-screen (width >= 0px) and (width <= 600px);
+@custom-media --tablet-screen (width >= 601px) and (width <= 900px);
+@custom-media --desktop-screen (width >= 901px) and (width <= 1200px);
+@custom-media --wideScreen-screen (width >= 1201px);

@@ -1,6 +1,10 @@
+const path = require('path')
+
 const postcssImport = require('postcss-import')
 const postcssCssNext = require('postcss-cssnext')
 const extractTextPlugin = require('extract-text-webpack-plugin')
+
+const cssGlobals = path.resolve(__dirname, '../../../app/styles/')
 
 module.exports = {
   test: /\.css$/,
@@ -25,7 +29,11 @@ module.exports = {
           sourceMap: true,
           ident: 'postcss',
           plugins: [
-            postcssImport,
+            postcssImport({
+              path: [
+                cssGlobals,
+              ],
+            }),
             postcssCssNext(),
           ],
         },

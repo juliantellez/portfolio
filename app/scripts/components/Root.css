@@ -1,14 +1,4 @@
-@import "normalize.css";
-
-*, *:before, *:after {
-    box-sizing: border-box;
-    font-family: "AvenirNext", "Avenir", "open-sans", arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-}
-
-a {
-    text-decoration: none;
-}
+@import "globals.css";
 
 .main {
     width: 100%;

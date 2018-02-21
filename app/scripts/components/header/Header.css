@@ -1,6 +1,11 @@
+@import "viewports.css";
+
 .main {
     padding: 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    @media (--wideScreen-screen) {
+        padding: 40px;
+    }
 }
