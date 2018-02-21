@@ -1,11 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import Header from '../components/Header'
+import Header from '../components/header/Header.component'
 import inject from '../components/utils/inject'
 import styles from './home/home.css'
 
-// TODO add @observe
 @inject('home$')
 class Home extends React.Component {
     static propTypes = {
@@ -14,10 +13,9 @@ class Home extends React.Component {
     render () {
       const {home$} = this.props
       return (
-        <div>
+        <div className={styles.main}>
           <Header />
-          <img src={home$.imageUrl}/>
-          <div className={styles.main} onClick={home$.onClick}>clik me</div>
+          <div onClick={home$.onClick}>clik me</div>
         </div>
       )
     }

@@ -1,0 +1,21 @@
+.main {
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    transition: all .25s ease-out;
+}
+
+.logo {
+    width: 60px;
+    line-height: 60px;
+    background-color: #c0a062;
+    color: #161616;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.name {
+    padding: 15px;
+    font-weight: 700;
+}
