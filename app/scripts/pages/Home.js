@@ -19,8 +19,7 @@ class Home extends React.Component {
       return (
         <div className={styles.main}>
           <Header />
-            <canvas id="canvasOne" width="900" height="520" ></canvas>
-          <div onClick={home$.onClick}>clik me</div>
+            <canvas id="canvasOne" className={styles.canvas} width="900" height="520" ></canvas>
         </div>
       )
     }
