@@ -21,6 +21,7 @@ module.exports = {
           camelCase: true,
           url: true,
           import: true,
+          minimize: true,
         },
       },
       {
