@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "prestart": "npm run build",
-    "start:dev": "nodemon build/server",
     "start": "node build/server",
+    "start:dev": "nodemon build/server",
+    "start:prod": "npm run build:prod && node build/server",
     "clear": "rm -rf build",
     "build": "npm run clear && npm run build:server && npm run build:client",
     "build:prod": "npm run clear && npm run build:server:prod && npm run build:client:prod",
