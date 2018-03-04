@@ -1,9 +1,6 @@
 const fs = require('fs')
 const merge = require('webpack-merge')
 
-const postcssImport = require('postcss-import')
-const postcssCssNext = require('postcss-cssnext')
-
 const config = require('../../app-config')
 const commonConfig = require('./common.config')
 
@@ -18,6 +15,8 @@ const nodeModules = fs
 }, {})
 
 module.exports = merge(commonConfig, {
+  target: 'node',
+  devtool: 'cheap-module-source-map',
   entry: {
     server: config.SERVER,
   },
@@ -26,7 +25,5 @@ module.exports = merge(commonConfig, {
     path: config.DEST,
     sourceMapFilename: '[file].map',
   },
-  target: 'node',
-  devtool: 'source-map',
   externals: nodeModules,
 })

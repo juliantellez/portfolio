@@ -3,6 +3,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import Favicon from './FavIcon'
+import GoogleTagManager from './GoogleTagManager'
 
 export default class Html extends React.Component {
   static propTypes = {
@@ -25,6 +26,8 @@ export default class Html extends React.Component {
   render () {
     const {title, description, keywords} = this.props
     const favicon = Favicon()
+    const gtm = GoogleTagManager()
+
     return (
       <html>
         <head>
@@ -34,6 +37,7 @@ export default class Html extends React.Component {
           <meta name='description' content={description} />
           <meta name='keywords' content={keywords} />
           {favicon}
+          {gtm}
         </head>
         <body>
           <main id='main' dangerouslySetInnerHTML={{__html: this.props.children}} />
